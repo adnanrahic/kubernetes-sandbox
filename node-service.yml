@@ -11,8 +11,9 @@ spec:
     - port: 80
       targetPort: 3000
   # Replace with the IP of your minikube node / master node
+  # If you have a dedicated load balancer no need to add externalIPs
   externalIPs:
-    - 192.168.99.100
+    # - 192.168.99.100
   selector:
     app: node
     tier: backend

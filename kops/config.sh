@@ -1,7 +1,7 @@
 export ORGANIZATION_NAME=adnanrahic
 # create state store
 export BUCKET_NAME=${ORGANIZATION_NAME}-state-store
-aws s3api create-bucket --bucket ${BUCKET_NAME} --region eu-west-1
+aws s3api create-bucket --bucket ${BUCKET_NAME} --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
 aws s3api put-bucket-versioning --bucket ${BUCKET_NAME} --versioning-configuration Status=Enabled
 # create cluster
 export KOPS_CLUSTER_NAME=${ORGANIZATION_NAME}.k8s.local
